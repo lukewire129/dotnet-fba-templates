@@ -1,0 +1,5 @@
+<Project>
+    <ItemGroup>
+        <Compile Include="**/*.cs" Exclude="Program.cs" />
+    </ItemGroup>
+</Project>

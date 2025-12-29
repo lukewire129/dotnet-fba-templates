@@ -41,15 +41,15 @@ new Application()
                                 .FontSize(24)
                                 .Margin(8)
                                 .HCenter()
-                                .Bind(TextBlock.TextProperty, new Binding(nameof(CounterViewModel.Count))),
+                                .Bind(tb => tb.Text, static (CounterViewModel vm) => vm.Count),
                             new Button()
                                 .Content("Increment (+1)")
                                 .Margin(8)
-                                .Bind(Button.CommandProperty, new Binding(nameof(CounterViewModel.IncrementCountCommand))),
+                                .BindCommand(btn => btn.Command, static (CounterViewModel vm) => vm.IncrementCountCommand),
                             new Button()
                                 .Content("Decrement (-1)")
                                 .Margin(8)
-                                .Bind(Button.CommandProperty, new Binding(nameof(CounterViewModel.DecrementCountCommand)))
+                                .BindCommand(btn => btn.Command, static (CounterViewModel vm) => vm.DecrementCountCommand)
                         )
                 )
     );
